@@ -18,7 +18,7 @@ Adicione na PATH os caminhos:
 
 6 - Ao abrir o código main.c pelo Visual Studio Code ele irá te sugerir uma extensão para programas feitos em C, você precisará instalar ela.
 
-7
+7 -
 - Na linha 2 do código main.c especifique o caminho da biblioteca do SQLite.
 - Na linha 45 do código main.c especifique o caminho do banco de dados.
 
