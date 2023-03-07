@@ -1,8 +1,8 @@
 Instruções
 
 1 - Você precisa ter em sua máquina o conjunto de ferramentas GNU, o MinGW.
-Você pode obter a versão mais estável no link: https://github.com/niXman/mingw-builds-binaries/releases
-Recomendo baixar a versão: 12.2.0-rt_v10-rev2/x86_64-12.2.0-release-win32-seh-ucrt-rt_v10-rev2.7z
+- Você pode obter a versão mais estável no link: https://github.com/niXman/mingw-builds-binaries/releases
+- Recomendo baixar a versão: 12.2.0-rt_v10-rev2/x86_64-12.2.0-release-win32-seh-ucrt-rt_v10-rev2.7z
 
 2 - Extraia a pasta do MinGW no diretório raiz do Windows, no meu caso é o C:\
 
@@ -19,10 +19,10 @@ Você pode obter a versão mais estável no link: https://visualstudio.microsoft
 6 - Ao abrir o código main.c pelo Visual Studio Code ele irá te sugerir uma extensão para programas feitos em C, você precisará instalar ela.
 
 7 - Na linha 2 do código main.c especifique o caminho da biblioteca do SQLite.
-    Na linha 45 do código main.c especifique o caminho do banco de dados.
+  - Na linha 45 do código main.c especifique o caminho do banco de dados.
 
 8 - Caso faça uma alteração no código, será necessário recompilar, você fazer isso pelo comando no terminal do VS Code (É necessário estar no diretório \code):
-gcc main.c sqlite3.o -Ic:\sqlite-libs -o main.exe
+- gcc main.c sqlite3.o -Ic:\sqlite-libs -o main.exe
 
 9 - Para rodar o programa use o comando no terminal do VS Code (É necessário estar no diretório \code):
-.\main.exe
+- .\main.exe
