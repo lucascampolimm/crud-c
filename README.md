@@ -14,7 +14,7 @@ Adicione na PATH os caminhos:
 - C:\sqlite-libs
 
 5 - Instale o Visual Stdio Code para compilar e executar o código dentro da IDE.
-Você pode obter a versão mais estável no link: https://visualstudio.microsoft.com/pt-br/downloads/
+- Você pode obter a versão mais estável no link: https://visualstudio.microsoft.com/pt-br/downloads/
 
 6 - Ao abrir o código main.c pelo Visual Studio Code ele irá te sugerir uma extensão para programas feitos em C, você precisará instalar ela.
 
