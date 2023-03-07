@@ -18,11 +18,11 @@ Você pode obter a versão mais estável no link: https://visualstudio.microsoft
 
 6 - Ao abrir o código main.c pelo Visual Studio Code ele irá te sugerir uma extensão para programas feitos em C, você precisará instalar ela.
 
-7 - Na linha 2 do código especifique o caminho da biblioteca do SQLite.
-    Na linha 45 especifique o caminho do banco de dados.
+7 - Na linha 2 do código main.c especifique o caminho da biblioteca do SQLite.
+    Na linha 45 do código main.c especifique o caminho do banco de dados.
 
-8 - Caso faça uma alteração no código você pode recompilar pelo comando no terminal do VS Code:
-gcc main.c sqlite3.o -Ic:\sqlite -o main.exe
+8 - Caso faça uma alteração no código, será necessário recompilar, você fazer isso pelo comando no terminal do VS Code (É necessário estar no diretório \code):
+gcc main.c sqlite3.o -Ic:\sqlite-libs -o main.exe
 
-9 - Para rodar o programa use o comando no terminal do VS Code:
+9 - Para rodar o programa use o comando no terminal do VS Code (É necessário estar no diretório \code):
 .\main.exe
