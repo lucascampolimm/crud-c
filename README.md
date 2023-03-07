@@ -21,8 +21,8 @@ Você pode obter a versão mais estável no link: https://visualstudio.microsoft
 7 - Na linha 2 do código especifique o caminho da biblioteca do SQLite.
     Na linha 45 especifique o caminho do banco de dados.
 
-8 - Caso faça uma alteração no código você pode recompilar pelo comando:
+8 - Caso faça uma alteração no código você pode recompilar pelo comando no terminal do VS Code:
 gcc main.c sqlite3.o -Ic:\sqlite -o main.exe
 
-9 - Para rodar o programa use o comando:
+9 - Para rodar o programa use o comando no terminal do VS Code:
 .\main.exe
