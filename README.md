@@ -1,8 +1,8 @@
 Instruções
 
 0 - Você precisa ter em sua máquina o conjunto de ferramentas GNU, o MinGW.
-- Você pode obter a versão mais estável no link: https://github.com/niXman/mingw-builds-binaries/releases
-- Recomendo baixar a versão: 12.2.0-rt_v10-rev2/x86_64-12.2.0-release-win32-seh-ucrt-rt_v10-rev2.7z
+- Você pode obter a versão mais estável no link: https://winlibs.com/
+- Recomendo baixar a versão UCRT Runtime estável sem o LLVM/Clang/LLD/LLDB porque você não irá utilizar essas ferramentas.
 
 1 - Extraia a pasta do MinGW no diretório raiz do Windows, no meu caso é o C:\
 
