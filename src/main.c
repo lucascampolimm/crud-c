@@ -156,7 +156,7 @@ int main()
                 return 0;
                 break;
             default:
-                printf("Opção inválida! \n");
+                printf("\nOpção inválida!\n");
         }
         printf("\n");
         system("pause");
