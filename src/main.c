@@ -44,7 +44,7 @@ int main()
     int erro = 0;
     erro = sqlite3_open("C:\\ProjetoC#\\crud-csharp\\db\\banco_estudantes.db", &DB);
     if (erro) {
-        printf("Erro ao abrir o BD! \n");
+        printf("Erro ao abrir o DB! \n");
         return -1;
     }
     int sair, op;
@@ -161,7 +161,7 @@ int main()
         printf("\n");
         system("pause");
     }
-    // Fecha o BD.
+    // Fecha o DB.
     sqlite3_close(DB);
     return 0;
 }
