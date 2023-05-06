@@ -1,5 +1,5 @@
 // Bibliotecas.
-#include "C:\sqlite\sqlite3.h"
+#include "C:\sqlite-libs\sqlite3.h"
 #include <stdio.h> 
 #include <string.h>
 #include <stdlib.h>
@@ -10,11 +10,11 @@ int rows;
 // Função de callback para exibir retornos da query.
 /**
  * callback: É uma função que é chamada como argumento de uma outra função.
- * *NotUsed: Parâmentro padrão da documentação do SQlite3, ponteiro vazio.
+ * *NotUsed: Parâmentro padrão da documentação do SQLite3, ponteiro vazio.
  * argc: Contagem do número de atributos do registro.
  * **argv: Conjunto de dados em formado de ponteiro do ponteiro. Quando você junta 2 ponteiros simulo uma matriz.
  * **azColName: O mesmo de argv, mas invés de conter os dados da query, vai conter o nome dos atributos do registro.
- * ?: É um inlineif, um if else que cabe em uma linha só. Se for true retorna o primeiro campo, se for falso retorna o segundo campo.
+ * ?: É um inlineif, um if else que cabe em uma linha só. Se for true retorna o primeiro campo, se for false retorna o segundo campo.
 */
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
     // Incrementa a contagem do número de linhas retornadas pela query.
@@ -38,11 +38,11 @@ int main()
     setlocale(LC_ALL, "pt_BR.UTF-8");
     // Armazena uma mensagem de erro que eu não quis exibir.
     char *zErrMsg = 0;
-    // Ponteiro que referencia o BD que estou utilizando.
+    // Ponteiro que referencia o DB que estou utilizando.
     sqlite3* DB;
     // Váriável noobinha para saber se o banco vai dar liga.
     int erro = 0;
-    erro = sqlite3_open("C:\\ProjetoC#\\DB\\banco_estudantes.db", &DB);
+    erro = sqlite3_open("C:\\ProjetoC#\\crud-csharp\\db\\banco_estudantes.db", &DB);
     if (erro) {
         printf("Erro ao abrir o BD! \n");
         return -1;
@@ -55,7 +55,7 @@ int main()
     char nome[50], nome_pai[50], endereco[50];
     while (!sair)
     {
-        printf("\nEscolha uma opção: \n");
+        printf("\nEscolha uma opção: \n\n");
         printf("1) Listar todos os alunos \n");
         printf("2) Buscar aluno pelo ID \n");
         printf("3) Inserir novo aluno \n");
@@ -70,7 +70,7 @@ int main()
             case 1:
                 // strcopy é uma função para copiar o conteúdo de texto para dentro de uma variável.
                 // Está jogando o meu texto de select para dentro de sql.
-                printf("Alunos listados: \n\n");
+                printf("\nAlunos listados: \n\n");
                 strcpy(sql, "SELECT * from Students");
                 // Executa a SQL no banco.
                 sqlite3_exec(DB, sql, callback, 0, &zErrMsg);
@@ -80,12 +80,12 @@ int main()
                 rows = 0;
                 printf("\nDigite o ID: ");
                 scanf("%i", &ID);
-                printf("\nInformações do ID: \n");
+                printf("\nInformações do ID: \n\n");
                 // sprintf junta dentro de SQL uma nova query formatada.
                 // sprintf formata uma string para dentro de uma variável.
                 sprintf(sql, "SELECT * from Students WHERE ID = %i", ID);
                 sqlite3_exec(DB, sql, callback, 0, &zErrMsg);
-                // Se rows for 0, siginifica que o usuário fez bosta.
+                // Se rows for 0, siginifica que o usuário fez besteira.
                 if (rows == 0)
                 {
                     printf("\nNenhum usuário com esse ID! \n");
@@ -101,11 +101,11 @@ int main()
                 gets(nome_pai);
                 printf("Digite o endereço do aluno: ");
                 gets(endereco);
-                // Insere uma nova entrada no BD.
+                // Insere uma nova entrada no DB.
                 // \"%s\": É uma string que vai ficar entre aspas dentro da query. É uma formatação.
                 sprintf(sql, "INSERT INTO Students (Name, FatherName, Address) VALUES (\"%s\", \"%s\", \"%s\"); ", nome, nome_pai, endereco);
                 sqlite3_exec(DB, sql, callback, 0, &zErrMsg);
-                printf("O aluno foi inserido com sucesso! \n");
+                printf("\nO aluno foi inserido com sucesso! \n");
                 break;
             case 4:
                 rows = 0;
@@ -122,7 +122,7 @@ int main()
                 } else {
                     sprintf(sql, "DELETE from Students WHERE ID = %i", ID);
                     sqlite3_exec(DB, sql, 0, 0, &zErrMsg);
-                    printf("Registro apagado com sucesso! \n\n");
+                    printf("\nRegistro apagado com sucesso! \n\n");
                 }
                 break;
             case 5:
@@ -147,12 +147,12 @@ int main()
                     // Formata a query de update e faz o update.
                     sprintf(sql, "UPDATE Students set Name=\"%s\", FatherName=\"%s\", Address=\"%s\" WHERE ID = %i", nome, nome_pai, endereco, ID);
                     sqlite3_exec(DB, sql, 0, 0, &zErrMsg);
-                    printf("Registro atualizado com sucesso! \n\n");
+                    printf("\nRegistro atualizado com sucesso! \n\n");
                 }
                 break;
             case 6: 
                 sair = 1;
-                printf("Você saiu do programa! \n");
+                printf("\nVocê saiu do programa!");
                 return 0;
                 break;
             default:
