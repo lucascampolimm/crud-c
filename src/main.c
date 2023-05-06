@@ -10,7 +10,7 @@ int rows;
 // Função de callback para exibir retornos da query.
 /**
  * callback: É uma função que é chamada como argumento de uma outra função.
- * *NotUsed: Parâmentro padrão da documentação do SQLite3, ponteiro vazio.
+ * *NotUsed: Parâmentro padrão da documentação do SQLite, ponteiro vazio.
  * argc: Contagem do número de atributos do registro.
  * **argv: Conjunto de dados em formado de ponteiro do ponteiro. Quando você junta 2 ponteiros simulo uma matriz.
  * **azColName: O mesmo de argv, mas invés de conter os dados da query, vai conter o nome dos atributos do registro.
